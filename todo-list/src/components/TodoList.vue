@@ -313,6 +313,6 @@ input {
 }
 .task-label a {
   color: #55ec83; 
-  text-decoration: underline; 
+  text-decoration:none; 
 }
 </style>
