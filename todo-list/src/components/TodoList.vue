@@ -22,8 +22,8 @@
           <label
             class="task-label"
             :class="{ 'completed-task': task.isCompleted }"
-            >{{ task.text }}</label
-          >
+            v-html="formatTaskText(task.text)"
+          ></label>
           <div class="action-buttons">
             <button class="custom-action-button" @click="editTask(index)">
               Editar
@@ -41,6 +41,7 @@
         </div>
       </li>
     </ul>
+
     <div class="action-buttons-bottom">
       <button class="action-button" @click="exportTasks">
         Exportar para JSON
@@ -75,6 +76,10 @@ export default {
     };
   },
   methods: {
+    formatTaskText(text) {
+      const linkPattern = /(\bhttps?:\/\/\S+\b)/gi;
+      return text.replace(linkPattern, '<a href="$1" target="_blank">$1</a>');
+    },
     toggleTaskStatus(index) {
       this.tasks[index].isCompleted = !this.tasks[index].isCompleted;
       this.saveTasksToLocalStorage();
@@ -169,7 +174,7 @@ h1 {
 .bordered-text {
   -webkit-text-stroke: 2px rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .input-container input {
   width: 60%;
@@ -305,5 +310,9 @@ input {
   margin: 3px;
   border: 2px solid #000000;
   color: #ffffff;
+}
+.task-label a {
+  color: #55ec83; 
+  text-decoration: underline; 
 }
 </style>
