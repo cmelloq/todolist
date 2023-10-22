@@ -17,7 +17,7 @@
       <li v-for="(task, index) in tasks" :key="index">
         <div
           class="task-frame"
-          :style="task.isCompleted ? 'border: 2px solid green;' : ''"
+          :style="task.isCompleted ? 'border: 4px solid green;' : ''"
         >
           <label
             class="task-label"
