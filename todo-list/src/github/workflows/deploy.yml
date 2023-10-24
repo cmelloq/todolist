@@ -26,8 +26,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.email "cmelloq@gmail.com"
+          git config --global user.name "cmelloq"
           git checkout --orphan gh-pages
           git --work-tree dist add --all
           git --work-tree dist commit -m "GitHub Pages Deployment"
@@ -35,4 +35,4 @@ jobs:
           git checkout -
         env:
           NODE_ENV: production
-        if: github.ref == 'refs/heads/main' # Personalize de acordo com a sua branch principal
+        if: github.ref == 'refs/heads/origin'
