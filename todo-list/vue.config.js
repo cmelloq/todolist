@@ -3,5 +3,10 @@ module.exports = defineConfig({
   transpileDependencies: true,
   publicPath: process.env.NODE_ENV === 'production'
   ? '/todo-list/'
-  : '/'
+  : '/',
+  pwa: {
+    workboxOptions: {
+      exclude: [/_redirects/]
+    }
+  }
 })
