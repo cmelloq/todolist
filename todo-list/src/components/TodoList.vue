@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-      <h1 class="bordered-text">Maru Lista de Tarefas</h1>
+      <h1 class="bordered-text">Lista de Tarefas</h1>
     </h1>
     <div class="input-container">
       <input
